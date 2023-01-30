@@ -17,7 +17,7 @@ export const RadioCircle = styled.div<RadioProps>`
 
     ${({ checked }) =>
         checked ? css`
-        border: 2px solid ${({ theme }) => theme.blue[10]};
+        border: 2px solid ${({ theme }) => theme.blue[80]};
           `
             : ``
     }
@@ -31,7 +31,7 @@ export const RadioCircle = styled.div<RadioProps>`
         transition: all 0.3s;
         ${({ checked }) =>
         checked ? css`
-        background: ${({ theme }) => theme.blue[10]};
+        background: ${({ theme }) => theme.blue[80]};
           `
             : ``
     }
