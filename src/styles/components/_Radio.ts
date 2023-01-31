@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
 
 type RadioProps = {
-    checked: boolean;
+  checked: boolean;
 }
 
 export const RadioCircle = styled.div<RadioProps>`
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border: 2px solid #aeaeae;
     border-radius: 100%;
     display: flex;
@@ -16,11 +16,11 @@ export const RadioCircle = styled.div<RadioProps>`
     cursor: pointer;
 
     ${({ checked }) =>
-        checked ? css`
+    checked ? css`
         border: 2px solid ${({ theme }) => theme.blue[80]};
           `
-            : ``
-    }
+      : ``
+  }
 
     transition: all 0.3s;
 
@@ -30,10 +30,10 @@ export const RadioCircle = styled.div<RadioProps>`
         border-radius: 100%;
         transition: all 0.3s;
         ${({ checked }) =>
-        checked ? css`
+    checked ? css`
         background: ${({ theme }) => theme.blue[80]};
           `
-            : ``
-    }
+      : ``
+  }
     }
 `;
