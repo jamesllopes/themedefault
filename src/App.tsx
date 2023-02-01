@@ -4,6 +4,8 @@ import { Radio } from './components/Radio'
 import { Input } from './components/Input'
 import { Dialog } from './components/Dialog'
 import { ImUserCheck } from "react-icons/im"
+import { Switch } from './components/Switch'
+import { Checkbox } from './components/Checkbox'
 
 function App() {
 
@@ -20,6 +22,7 @@ function App() {
         bg='blue.20'>ABC</Button>
 
       <Radio />
+
       <Dialog>
         <Dialog.HeaderRow>
           Basic dialog title
@@ -30,8 +33,6 @@ function App() {
         <Dialog.Footer>
           <>Action 2</>
           <>Action 1</>
-
-
         </Dialog.Footer>
       </Dialog>
 
@@ -47,10 +48,26 @@ function App() {
         <Dialog.Footer>
           <>Action 2</>
           <>Action 1</>
-
-
         </Dialog.Footer>
       </Dialog>
+      <Switch />
+
+      <Checkbox
+        variant={"primary"}
+        bg={""}>
+        Primary
+      </Checkbox>
+      <Checkbox
+        variant={"secondary"}
+        bg={""}>
+        Secondary
+      </Checkbox>
+
+      <Checkbox
+        variant={"disable"}
+        bg={""}>
+        Disable
+      </Checkbox>
 
 
     </div>

@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import { ActionFooter2, ActionFooter1, DialogBody, DialogBox, DialogFooter, DialogHeaderRow, DialogHeaderColumn, TextBody, TextHeader } from '../styles/components/_Dialog'
 
 type Props = {
