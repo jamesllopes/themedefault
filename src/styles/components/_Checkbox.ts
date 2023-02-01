@@ -1,15 +1,11 @@
 import styled, { css } from 'styled-components';
 
 type ButtonProps = {
-    variant?: "primary" | "secondary" | "disable" | "destructive" | "link";
+    variant?: "primary" | "secondary" | "disable";
     bg?:
-    | "blue.20"
-    | "blue.80"
-    | "green.20"
-    | "green.100"
-    | "red"
-    | "orange"
-    | string;
+    | "primary"
+    | "disable"
+    | "secondary"
     checked?: boolean
 };
 
@@ -26,9 +22,9 @@ align-items: center;
 
 export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' }) <ButtonProps>`
 overflow: hidden;
-white-space: nowrap;width: 1px;
+white-space: nowrap;
+width: 1px;
 height: 1px;
-margin: -1px;
 padding: 0;
 `;
 
@@ -41,6 +37,32 @@ export const DivCheckbox = styled.div<ButtonProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    ${({ bg }) =>
+        bg === "primary"
+            ? css<ButtonProps>`
+        background-color: rgba(208, 188, 255, 0.08);
+          `
+            :
+            ``}
+
+    ${({ bg }) =>
+        bg === "disable"
+            ? css<ButtonProps>`
+        background-color: rgba(230, 225, 229, 0.08);
+      `
+            :
+            ``
+    }
+
+${({ bg }) =>
+        bg === "secondary"
+            ? css<ButtonProps>`
+            background-color: rgba(242, 184, 181, 0.08);
+  `
+            :
+            ``
+    }
 
 `
 export const StyledCheckbox = styled.label<ButtonProps>`

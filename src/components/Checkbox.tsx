@@ -4,14 +4,11 @@ import { BsCheck } from "react-icons/bs"
 
 type Props = {
     children: string | JSX.Element;
-    variant: "primary" | "secondary" | "disable" | "destructive" | "link";
-    bg: | "blue.20"
-    | "blue.80"
-    | "green.20"
-    | "green.100"
-    | "red"
-    | "orange"
-    | string;
+    variant?: "primary" | "secondary" | "disable";
+    bg?:
+    | "primary"
+    | "disable"
+    | "secondary";
 }
 
 export const Checkbox = ({ children, variant, bg }: Props) => {

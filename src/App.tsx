@@ -53,22 +53,37 @@ function App() {
       <Switch />
 
       <Checkbox
-        variant={"primary"}
-        bg={""}>
+        variant={"primary"}>
         Primary
       </Checkbox>
       <Checkbox
-        variant={"secondary"}
-        bg={""}>
+        variant={"secondary"}>
         Secondary
       </Checkbox>
 
       <Checkbox
-        variant={"disable"}
-        bg={""}>
+        variant={"disable"}>
         Disable
       </Checkbox>
 
+      <Checkbox
+        variant={"disable"}
+        bg={"disable"}>
+        Disable
+      </Checkbox>
+
+
+      <Checkbox
+        variant={"secondary"}
+        bg={"secondary"}>
+        Disable
+      </Checkbox>
+
+      <Checkbox
+        variant={"primary"}
+        bg={"primary"}>
+        Primary
+      </Checkbox>
 
     </div>
   )
