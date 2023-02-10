@@ -6,9 +6,12 @@ import { Dialog } from './components/Dialog'
 import { ImUserCheck } from "react-icons/im"
 import { Switch } from './components/Switch'
 import { Checkbox } from './components/Checkbox'
+import { Modal } from './components/Modal'
 
 function App() {
 
+
+  const [openModal, setOpenModal] = useState(false)
   return (
     <div className="App"
       style={{
@@ -17,25 +20,16 @@ function App() {
         gap: "2rem",
         alignItems: "center"
       }}>
-      <Button
-        variant='primary'
-        bg='blue.20'>ABC</Button>
 
-      <Radio />
+      <button
+        style={{ cursor: "pointer" }}
+        onClick={() => setOpenModal(false)}>
+        Abrir Modal
+      </button>
+      <Modal
+        isOpen={openModal} />
 
-      <Dialog>
-        <Dialog.HeaderRow>
-          Basic dialog title
-        </Dialog.HeaderRow>
-        <Dialog.Body>
-          A dialog is a type of modal window that appears in front of app content to provide critical information, or prompt for a decision to be made.
-        </Dialog.Body>
-        <Dialog.Footer>
-          <>Action 2</>
-          <>Action 1</>
-        </Dialog.Footer>
-      </Dialog>
-
+      {/* 
       <Dialog>
         <Dialog.HeaderColumn>
           <ImUserCheck
@@ -49,8 +43,8 @@ function App() {
           <>Action 2</>
           <>Action 1</>
         </Dialog.Footer>
-      </Dialog>
-      <Switch />
+      </Dialog> */}
+      {/* <Switch />
 
       <Checkbox
         variant={"primary"}>
@@ -70,10 +64,10 @@ function App() {
         variant={"disable"}
         bg={"disable"}>
         Disable
-      </Checkbox>
+      </Checkbox> */}
 
 
-      <Checkbox
+      {/* <Checkbox
         variant={"secondary"}
         bg={"secondary"}>
         Disable
@@ -83,7 +77,7 @@ function App() {
         variant={"primary"}
         bg={"primary"}>
         Primary
-      </Checkbox>
+      </Checkbox> */}
 
     </div>
   )

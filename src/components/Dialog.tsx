@@ -1,76 +1,79 @@
-import { ActionFooter2, ActionFooter1, DialogBody, DialogBox, DialogFooter, DialogHeaderRow, DialogHeaderColumn, TextBody, TextHeader } from '../styles/components/_Dialog'
+import * as ReactDialog from "@radix-ui/react-dialog";
+import {
+    DialogBody,
+    DialogBox,
+    DialogFooter,
+    DialogHeaderColumn,
+    DialogHeaderRow,
+    DialogOverlay,
+} from "../styles/components/_Dialog";
 
 type Props = {
     children?: JSX.Element | string | any;
+    isOpen?: boolean;
+    setIsOpen?: any;
 }
 
-export const Dialog = ({ children, ...props }: Props) => {
-
+export const Dialog = ({ children, isOpen, setIsOpen, ...props }: Props) => {
     return (
         <>
-            <DialogBox
-                {...props}>
-                {children}
-            </DialogBox>
+            <ReactDialog.Root
+                open={isOpen}>
+                {/* <DialogOverlay /> */}
+                <ReactDialog.Portal>
+                    {/* <DialogContent> */}
+                    <DialogBox {...props}>{children}</DialogBox>
+                    {/* </DialogContent> */}
+                </ReactDialog.Portal>
+            </ReactDialog.Root>
         </>
-    )
-}
+    );
+};
 
 Dialog.HeaderRow = function HeaderRow({ children, ...props }: Props) {
-
     return (
         <>
-            <DialogHeaderRow
-                {...props}
-            >
-                <TextHeader>
-                    {children}
-                </TextHeader>
-            </DialogHeaderRow>
+            <DialogHeaderRow {...props}>{children}</DialogHeaderRow>
         </>
-    )
-}
+    );
+};
 
 Dialog.HeaderColumn = function HeaderColumn({ children, ...props }: Props) {
-
     return (
         <>
-            <DialogHeaderColumn
-                {...props}
-            >
-                {children[0]}
-                <TextHeader>
-                    {children[1]}
-                </TextHeader>
-            </DialogHeaderColumn>
+            <DialogHeaderColumn {...props}>{children}</DialogHeaderColumn>
         </>
-    )
-}
+    );
+};
 
 Dialog.Body = function Body({ children, ...props }: Props) {
-
     return (
         <>
-            <DialogBody
-                {...props}
-            >
-                <TextBody>
-                    {children}
-                </TextBody>
-            </DialogBody>
+            <DialogBody {...props}>{children}</DialogBody>
         </>
-    )
-}
+    );
+};
 
 Dialog.Footer = function Footer({ children, ...props }: Props) {
-
     return (
         <>
-            <DialogFooter
-                {...props}>
-                <ActionFooter2>{children[0]}</ActionFooter2>
-                <ActionFooter1>{children[1]}</ActionFooter1>
-            </DialogFooter>
+            <DialogFooter>{children}</DialogFooter>
         </>
-    )
-}
+    );
+};
+
+Dialog.ButtonOpen = function ButtonOpen({ children, ...props }: Props) {
+    return (
+        <>
+            <ReactDialog.Trigger asChild>{children}</ReactDialog.Trigger>
+        </>
+    );
+};
+
+Dialog.Close = function Close({ children, ...props }: Props) {
+    return (
+        <>
+            <ReactDialog.Close asChild>{children}</ReactDialog.Close>
+        </>
+    );
+};
